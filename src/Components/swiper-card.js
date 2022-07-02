@@ -24,6 +24,7 @@ class SwiperCard extends React.Component{
 		</div>
 		<div className = "stats">
 		</div>
+		<span>Read More</span>
 		</div>
 	);
 	}

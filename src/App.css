@@ -98,3 +98,27 @@
     transform: rotate(360deg);
   }
 }
+
+.swiper-bar{
+    width: 100%;
+    height: 15px;
+    background-color: #A1BBDC;
+    display: flex;
+}
+
+.bar{
+    background-color: white;
+    height: 5px;
+    /* width: 50%; */
+    border-radius: 3px;
+    flex: 1 0 10%;
+    margin: 5px;
+}
+
+.bar.active{
+  background-color: #14142E;
+}
+
+.page{
+  text-align: left;
+}
