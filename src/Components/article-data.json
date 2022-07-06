@@ -1,13 +1,13 @@
-[{"title":"Frozen Dreams", 
-	"headerimage": "https://action.scholastic.com/content/dam/classroom-magazines/action/issues/2020-2021/020121/frozen-dreams/ACT-05-020121-p08-NF-MHenson-HR.jpg", 
+[{"title":"Frozen Dreams",
+	"headerimage": "https://action.scholastic.com/content/dam/classroom-magazines/action/issues/2020-2021/020121/frozen-dreams/ACT-05-020121-p08-NF-MHenson-HR.jpg",
 	"previewtext": "Matthew Henson was about to reach the North Pole. Suddenly, the ice beneath his feet cracked. What happened to Henson?",
 	"pages" :[{
-		"title":"Page 1", 
+		"title":"Page 1",
 		"content": "<p>It was April 3, 1909. An American explorer named Matthew Henson was walking across the ice-covered Arctic Ocean. This was a frozen wilderness—where no person could survive for long. Even polar bears stayed away.</p><p>But Henson was excited. He knew he was just days from achieving his dream. He wanted to be one of the first people to reach the North Pole.</p><p>Henson put his head down and pushed forward against the wind. Suddenly, he lost his balance. The ice beneath his feet cracked. He fell into the frigid ocean.</p><p>Henson had spent nearly 20 years of his life trying to get to the North Pole.</p><p>And now it seemed it would all end right here.</p>",
 		"question":{
-			"text": "Question text", 
+			"text": "Question text",
 		"options":["Yes, you can", "No, you can't"],
-		"answer": "answer" 
+		"answer": "answer"
 		}
 	}]
 },
@@ -17,32 +17,101 @@
 		"previewtext": "Can you tell what time it is in this picture?",
 		"pages":[
 			{
-			"title":"Land of the Midnight Sun", 
-			"content":"<p>Take a walk down the street in Fairbanks, Alaska, on June 21. There’s Mr. Freeman, mowing his lawn. The Wells family is having a barbecue. Dogs bark and kids play in backyards.</p><p>Now head downtown for a street festival. You can grab a hot dog and hear some live music. Soon the big baseball game will begin. The sun is just starting to set as you wipe some sweat from your forehead.</p><p>This might sound like a typical summer day, but then you check the time.</p><p>It’s . . . 11 p.m.?</p><p>Welcome to the land of the midnight sun.</p>", 
+			"title":"Land of the Midnight Sun",
+			"content":"<p>Take a walk down the street in Fairbanks, Alaska, on June 21. There’s Mr. Freeman, mowing his lawn. The Wells family is having a barbecue. Dogs bark and kids play in backyards.</p><p>Now head downtown for a street festival. You can grab a hot dog and hear some live music. Soon the big baseball game will begin. The sun is just starting to set as you wipe some sweat from your forehead.</p><p>This might sound like a typical summer day, but then you check the time.</p><p>It’s . . . 11 p.m.?</p><p>Welcome to the land of the midnight sun.</p>",
 			"question":{
 				"text":"Did the article say we could ride a rollar coaster at the festival in Fairbanks?",
 				"options":["Yes, you can", "No, you can't"],
 				"answer":"No, you can't"
 			}
-		}, 
+		},
 		{
-			"title":"Long Summer Days", 
-			"content":"<p>That’s right: For 70 days between May and July, it never gets dark in Fairbanks. Every night, the sun dips low in the sky. Just when it seems like it’s going to disappear beyond the horizon, it climbs back up. Why does this happen?</p><p>It has to do with the angle of our planet. Every 24 hours, Earth rotates on its axis. The side that faces the sun experiences daylight. For the side that’s facing away from the sun, it’s night. But Earth is not perfectly straight—it’s tilted.And during the summer months, the top of Earth is tilted toward the sun. So for areas above or near the Arctic Circle, the sun is pointed at them all day long.</p><p>Of course, it’s not all sunshine. In the winter months, the top of Earth is tilted away from the sun. That means in places with the midnight sun, daytime is very short in the winter. In some spots, the sun doesn’t come up for months.</p>", 
+			"title":"Long Summer Days",
+			"content":"<p>That’s right: For 70 days between May and July, it never gets dark in Fairbanks. Every night, the sun dips low in the sky. Just when it seems like it’s going to disappear beyond the horizon, it climbs back up. Why does this happen?</p><p>It has to do with the angle of our planet. Every 24 hours, Earth rotates on its axis. The side that faces the sun experiences daylight. For the side that’s facing away from the sun, it’s night. But Earth is not perfectly straight—it’s tilted.And during the summer months, the top of Earth is tilted toward the sun. So for areas above or near the Arctic Circle, the sun is pointed at them all day long.</p><p>Of course, it’s not all sunshine. In the winter months, the top of Earth is tilted away from the sun. That means in places with the midnight sun, daytime is very short in the winter. In some spots, the sun doesn’t come up for months.</p>",
 			"question":{
 				"text":"Why doesn't the sun set on some summer days in Fairbanks?",
-				"options":["Because Fairbanks is near the top of Earth", 
-								"Because many people live in Fairbanks", 
-								"Because the air there is very clean", 
+				"options":["Because Fairbanks is near the top of Earth",
+								"Because many people live in Fairbanks",
+								"Because the air there is very clean",
 								"Because Fairbanks is near an ocean"],
 				"answer":"Because Fairbanks is near the top of Earth"
 			}
 		},
 		{
 			"title":"Fun Around the Clock",
-			"content":"<p>In Fairbanks, people celebrate the midnight sun. Every year there’s a festival—complete with a baseball game that starts at 10:30 p.m. Tourists rush north to get a taste of endless summer days. But for people who live there, it’s not such a big deal.</p><p>We’re used to it,” says Brennan, 14. He and his friend Lily, also 14, have lived in Fairbanks their whole lives. During the bright summer and the dark winter, not much changes about their daily routine. “Day or night, light or dark, we do our normal things,” Lily says.</p><p>Sometimes normal just means having soccer practice at 10 p.m.</p>", 
+			"content":"<p>In Fairbanks, people celebrate the midnight sun. Every year there’s a festival—complete with a baseball game that starts at 10:30 p.m. Tourists rush north to get a taste of endless summer days. But for people who live there, it’s not such a big deal.</p><p>We’re used to it,” says Brennan, 14. He and his friend Lily, also 14, have lived in Fairbanks their whole lives. During the bright summer and the dark winter, not much changes about their daily routine. “Day or night, light or dark, we do our normal things,” Lily says.</p><p>Sometimes normal just means having soccer practice at 10 p.m.</p>",
 			"question":{}
 		}
 	]
 
+},
+,
+{"title":"Rats",
+	"headerimage": "https://scope.scholastic.com/content/dam/classroom-magazines/scope/issues/2021-22/030122/rats/SCO-06-030122-P12-PairedTextRats-HR.jpg",
+	"previewtext": "Could rats could save people from diseases?",
+	"pages" :[
+		{
+		"title":"Ewwww!",
+		"content":"<p>Humans are at war. Our enemies have powers that we can only dream of. They claw their way up the sides of buildings. They collapse their ribs to squeeze through tiny spaces. They have teeth as strong as steel.</p><p>No, these aren’t villains from a superhero movie. And they’re not aliens from a faraway planet. In fact, they’re living right underneath our feet.</p><p>They are rats.</p>",
+		"question":{}
+	},
+
+	{
+		"title":"",
+		"content":"<p>Rats and humans have been locked in battle for thousands of years. It’s a war that has cost billions of dollars and endangered millions of people around the world. We have tried almost everything to defeat our enemies: poisoned them, trapped them, hunted them with dogs.</p><p>But so far, the war rages on. And scientists aren’t so sure that we’re going to win.</p><img src=https://scope.scholastic.com/content/dam/classroom-magazines/scope/issues/2021-22/030122/rats/SCO-06-030122-P12-PairedTextRats-MD-1.jpg>",
+		"question":{}
+	},
+
+	{
+		"title":"Furry Shadows",
+		"content":"<img src=https://scope.scholastic.com/content/dam/classroom-magazines/scope/issues/2021-22/030122/rats/SCO-06-030122-P12-PairedTextRats-IN-1.jpg><p>Picture a rat in your mind: The grimy fur. The long, skinny, yellow teeth. The bald, wormlike tail. Do you feel a creepy tickle in the pit of your belly?</p><p>It's not just you. Many people share a disgust for rats. Of course we do. Rats have been pestering us for more than 4,000 years. They escaped from traps in ancient Egypt. They gobbled up crops in ancient Greece. They snuck into grain storage buildings in ancient India, stuffing their faces and leaving behind their droppings.</p>",
+		"question":{}
+	},
+
+	{
+		"title":"",
+		"content":"<p>As the centuries passed and humans began traveling farther and farther around the globe—to explore, to trade with each other, to fight wars—rats came along for the ride. They hid in the bottoms of ships, helping themselves to the crew’s food and water. When the ships arrived at their destinations, the rats scampered ashore and made themselves at home.</p><p>In this way, rats established themselves in one place after another. And wherever they lived, they followed humans around like furry little shadows. They stole our food, feasted on our garbage, and nested in our homes.</p><p>But rats did more than just get on our nerves. They also brought misery and death.</p>",
+		"question":{
+			"text":"Have you ever seen a rat? How do you feel about it?",
+			"options":"<input></input>",
+			"answer":""
+		}
+	},
+
+	{
+		"title":"Disease Spreaders",
+		"content":"<p>In the 1300s, people across Africa, Asia, and Europe began getting sick. They burned with fever as oozing purple sores bubbled up on their skin. Death came within days.</p><p>This horrific disease was called the plague, and it spread with terrifying speed. Within just a few years, as many as 200 million people died.</p><p>At the time, people struggled to determine the cause of the scourge. Were people being poisoned? Was it a punishment from God? What no one suspected was that rats were one of the culprits.</p>",
+		"question":{
+			"text":"However, a new study suggests that rats weren’t the main carriers of fleas and lice that spread the plague—it was humans. Check out this article <i><a href=https://www.history.com/news/rats-didnt-spread-the-black-death-it-was-humans>Rats Didn’t Spread the Black Death—It Was Humans</a><i> if you are interested.",
+			"options":"",
+			"answer":""
+		}
+	},
+
+	{
+		"title":"",
+		"content":"<p>Today, scientists know that rats carry dangerous germs inside their bodies. (This is not so surprising considering these creatures crawl through sewers filled with human waste.) Many of these germs can spread to humans and make us sick.</p><p>People can get infected by touching rats, getting bitten by them, or eating food contaminated with their urine or excrement. In the case of the plague, the disease is often spread from rats to humans by fleas. When the fleas bite the rats, they slurp up plague germs along with the rats’ blood. When the fleas then bite humans, they pass those germs along.</p><p>The plague is just one of more than a dozen diseases that rats can spread to us. In the past 1,000 years, diseases carried by rats are thought to have caused more deaths than all wars on Earth combined.</p>",
+		"question":{
+			"text":" Did your attitudes towards rats change? Why or Why not?",
+			"options":[
+				"Awwww!",
+				"Ewwww!",
+				"Reason:<input></input>"
+			],
+			"answer":""
+		}
+	},
+
+	{
+		"title":"Reflection",
+		"question":{
+			"text":"After reading the article, write something you learned that could support your attitudes toward rats.",
+			"options":["<input></input>"],
+			"answer":""
+		}
 	}
+
+	]
+}
+
 ]
