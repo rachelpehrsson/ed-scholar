@@ -122,3 +122,34 @@
 .page{
   text-align: left;
 }
+
+.hl{
+  display: inline;
+}
+
+.hl-green{
+  background-color: #7FBA00;
+}
+
+.hl-red{
+  background-color: #EA4D33;
+}
+
+.dot {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.color-option: hover{
+  cursor: pointer;
+}
+
+.color-option.green .dot{
+  background-color: #7FBA00;
+}
+
+.color-option.red .dot{
+  background-color: #EA4D33;
+}

@@ -31,16 +31,11 @@ class SwiperCard extends React.Component{
 }
 
 SwiperCard.propTypes = {
-  //children: PropTypes.node,
-  title: PropTypes.string, 
+  title: PropTypes.string.isRequired, 
   path: PropTypes.string, 
-  previewtext:PropTypes.string,
+  previewtext:PropTypes.string
 }
 
-SwiperCard.propTypes  = {
-   title: '', 
-   path: '', 
-   previewtext:'',
-}
+
 
 export default SwiperCard
