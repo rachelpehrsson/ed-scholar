@@ -9,7 +9,8 @@ class HighlighterSelect extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			open: false
+			open: false, 
+			active:false
 		}
 	}
 
@@ -17,7 +18,7 @@ class HighlighterSelect extends React.Component{
 
 	const runClick=event=>{
 		const color = event.currentTarget.classList[1];
-		this.props.onClick(color);
+		this.props.colorClick(color);
 	}
 
 	const Color = ({color}) =>{
@@ -27,12 +28,22 @@ class HighlighterSelect extends React.Component{
     		</div>
   			);
 	};
+	const openHighlighterMenu=()=>{
+		if(!this.state.active){
+    		document.getElementById("color-menu").style.display = "inline-flex";
+    		this.state.active = true;
+		}
+		else{
+			document.getElementById("color-menu").style.display = "none";
+			this.state.active = false;
+		}
+    }
 	return(
 		<>
-		<div className = "selector" >
+		<div className = "selector" onClick = {openHighlighterMenu}>
 			<FontAwesomeIcon icon={faHighlighter} />
 		</div>
-		<div className = "colors">
+		<div id="color-menu" className = "colors">
 			<Color color={"green"}/>
 			<Color color={"red"}/>
 		</div>
@@ -44,7 +55,7 @@ class HighlighterSelect extends React.Component{
 HighlighterSelect.propTypes = {
   colors: PropTypes.node,
   active: PropTypes.bool, 
-  onClick: PropTypes.func
+  colorClick: PropTypes.func
 }
 
 export default HighlighterSelect

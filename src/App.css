@@ -119,6 +119,21 @@
   background-color: #14142E;
 }
 
+.page-view{
+  display: flex;
+}
+
+.page-nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 20px;
+}
+
+.page-nav: hover{
+  cursor: pointer;
+}
+
 .page{
   text-align: left;
 }
@@ -142,6 +157,10 @@
   display: inline-block;
 }
 
+.color-option{
+  margin: 0 5px;
+}
+
 .color-option: hover{
   cursor: pointer;
 }
@@ -153,3 +172,12 @@
 .color-option.red .dot{
   background-color: #EA4D33;
 }
+
+.selector{
+  display: inline-flex;
+}
+
+.colors{
+  display: none;
+}
+

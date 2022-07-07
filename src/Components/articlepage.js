@@ -5,6 +5,9 @@ import React, {Component} from "react"
 import {useLocation} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHighlighter } from '@fortawesome/free-solid-svg-icons';
+import {faCircleChevronLeft} from '@fortawesome/free-solid-svg-icons';
+import {faCircleChevronRight} from '@fortawesome/free-solid-svg-icons';
+import {faQuestion} from '@fortawesome/free-solid-svg-icons';
 import HighlighterSelect from "./highlighter-select"
   
 const ArticlePage = () => {
@@ -18,6 +21,10 @@ const ArticlePage = () => {
 // let colorMap = new Map();
 // colorMap.put("green", "#7FBA00");
 // colorMap.put("red", "#EA4D33");
+
+let highlightedContents = new Map();
+highlightedContents.set("green", new Array());
+highlightedContents.set("red", new Array());
 
 let currentColor = "green";
 
@@ -69,14 +76,16 @@ const setHighlighterColor=(color)=>{
 
   return (
     <>
-    <div className="prev"></div>
+    <div className="page-view">
+    <div className="page-nav prev"><FontAwesomeIcon icon={faCircleChevronLeft} /></div>
     <div className="page">
       <h1>{pages[currentPage].title}</h1>
-      <HighlighterSelect onClick = {setHighlighterColor}/>
+      <HighlighterSelect colorClick = {setHighlighterColor}/>
       <div id = "content" className="text-content" onMouseUp={e=>readSelection(e)} dangerouslySetInnerHTML={{__html:parseText(pages[currentPage].content)}}>
       </div>
     </div>
-    <div className="next"></div>
+    <div className="page-nav next"><FontAwesomeIcon className = "question-icon" icon={faQuestion} /></div>
+    </div>
     </>
   );
 };
