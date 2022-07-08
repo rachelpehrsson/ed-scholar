@@ -40,7 +40,7 @@ class HighlighterSelect extends React.Component{
     }
 	return(
 		<>
-		<div className = "selector" onClick = {openHighlighterMenu}>
+		<div id = "selector" className = "selector" onClick = {openHighlighterMenu}>
 			<FontAwesomeIcon icon={faHighlighter} />
 		</div>
 		<div id="color-menu" className = "colors">

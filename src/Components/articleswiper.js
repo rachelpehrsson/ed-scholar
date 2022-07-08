@@ -80,6 +80,7 @@ const renderCard=(i)=> {
 			title = {swipercards[i].title}
 			path = {swipercards[i].headerimage}
 			previewtext = {swipercards[i].previewtext}
+			navigateFunc = {componentWillMount}
 			key = {i}
 		/>
 		);
