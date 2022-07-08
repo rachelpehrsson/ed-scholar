@@ -18,9 +18,9 @@ const ArticlePage = () => {
     const pages = location.state.text;
     const currentPage = 0;
 
-// let colorMap = new Map();
-// colorMap.put("green", "#7FBA00");
-// colorMap.put("red", "#EA4D33");
+let colorMap = new Map();
+colorMap.set("green", "#7FBA00");
+colorMap.set("red", "#EA4D33");
 
 let highlightedContents = new Map();
 highlightedContents.set("green", new Array());
@@ -36,6 +36,7 @@ const readSelection=()=>{
     let pageContent = document.getElementById("content");
     let highlighted = "<div class='hl hl-"+currentColor+"'>"+selection+"</div>";
     pageContent.innerHTML = pageContent.innerHTML.replace(selection, highlighted);
+    highlightedContents.get(currentColor).push(window.getSelection());
     //page
   }
 }
@@ -71,7 +72,14 @@ const parseText =(txt)=>{
 }
 
 const setHighlighterColor=(color)=>{
+    let selector = document.getElementById("selector"); 
     currentColor = color;
+    selector.style.color = colorMap.get(currentColor);
+    document.getElementById("color-menu").style.display = "none";
+}
+
+const showQuestion=()=>{
+
 }
 
   return (
@@ -84,7 +92,7 @@ const setHighlighterColor=(color)=>{
       <div id = "content" className="text-content" onMouseUp={e=>readSelection(e)} dangerouslySetInnerHTML={{__html:parseText(pages[currentPage].content)}}>
       </div>
     </div>
-    <div className="page-nav next"><FontAwesomeIcon className = "question-icon" icon={faQuestion} /></div>
+    <div className="page-nav next"><FontAwesomeIcon className = "question-icon" icon={faQuestion} onClick = {showQuestion} /></div>
     </div>
     </>
   );

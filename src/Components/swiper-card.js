@@ -11,6 +11,9 @@ class SwiperCard extends React.Component{
 		}
 	} 
 	render(){
+	const runClick=event=>{
+		this.props.navigateFunc();
+	}
 	return(
 		<div className = "swiper-card article"/*{'piece ${ this.state.open }'}*/ >
 		<div className = "main-image">
@@ -24,7 +27,7 @@ class SwiperCard extends React.Component{
 		</div>
 		<div className = "stats">
 		</div>
-		<span>Read More</span>
+		<span onClick = {runClick} >Read More</span>
 		</div>
 	);
 	}
@@ -33,7 +36,8 @@ class SwiperCard extends React.Component{
 SwiperCard.propTypes = {
   title: PropTypes.string.isRequired, 
   path: PropTypes.string, 
-  previewtext:PropTypes.string
+  previewtext:PropTypes.string, 
+  navigateFunc:PropTypes.func
 }
 
 
