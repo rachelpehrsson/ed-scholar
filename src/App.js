@@ -21,7 +21,6 @@ function App() {
           </Routes>
           <Navbar />
       </Router>
-
       </header>
     </div>
 
