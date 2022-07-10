@@ -9,8 +9,10 @@ import {faCircleChevronLeft} from '@fortawesome/free-solid-svg-icons';
 import {faCircleChevronRight} from '@fortawesome/free-solid-svg-icons';
 import {faQuestion} from '@fortawesome/free-solid-svg-icons';
 import HighlighterSelect from "./highlighter-select"
-  
+
+
 const ArticlePage = () => {
+
    //console.log(props);
     const location = useLocation();
     console.log(location);
@@ -72,7 +74,7 @@ const parseText =(txt)=>{
 }
 
 const setHighlighterColor=(color)=>{
-    let selector = document.getElementById("selector"); 
+    let selector = document.getElementById("selector");
     currentColor = color;
     selector.style.color = colorMap.get(currentColor);
     document.getElementById("color-menu").style.display = "none";
@@ -83,6 +85,7 @@ const showQuestion=()=>{
 }
 
   return (
+
     <>
     <div className="page-view">
     <div className="page-nav prev"><FontAwesomeIcon icon={faCircleChevronLeft} /></div>
@@ -94,8 +97,9 @@ const showQuestion=()=>{
     </div>
     <div className="page-nav next"><FontAwesomeIcon className = "question-icon" icon={faQuestion} onClick = {showQuestion} /></div>
     </div>
+
     </>
   );
 };
-  
+
 export default ArticlePage;
