@@ -1,0 +1,38 @@
+/* // credit: ttps://blog.logrocket.com/creating-navbar-react/ */
+.nav{
+  text-align: center;
+}
+.navbar{
+  /* display:inline-block; */
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+  text-decoration: none;
+  font-size: 20px;
+padding:inherit;
+}
+
+img{
+  width: 45px;
+  display:inline-block;
+}
+
+.navbar li{
+text-decoration: none;
+  /* border-style:solid; */
+  padding: 12px 60px;
+list-style: none;
+display:inline-block;
+/* margin:auto; */
+border-radius: 5px;
+}
+
+.navbar li a{
+  text-decoration: none;
+  color:rgb(150);
+}
+.navbar li a:hover img{
+  width:55px;
+}
+.navbar li a:active{
+  text-decoration: none;
+}
