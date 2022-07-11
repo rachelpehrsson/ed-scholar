@@ -11,19 +11,85 @@ class PageQuestion extends React.Component{
 		}
 	}
 
-	const openQuestion =()=>{
-
-	}
-
 
 	render(){
+
+	const checkCorrectness=(e)=>{
+			if(this.props.answer){
+				if(this.props.answer == e.currentTarget.innerText){
+					e.currentTarget.classList.push("correct");
+					//call function to show navigation
+				}
+				else
+					e.currentTarget.classList.push("incorrect");
+			}
+			else{
+				e.currentTarget.classList.push("correct");
+			}
+			submitInput();
+	}
+
+	const submitInput=(e)=>{
+		this.props.activateNext();
+		if(e){
+		e.currentTarget.disabled = true;
+		e.preventDefault();
+		}
+	}
+
+	const renderTextInput=(index)=>{
+		let inputId = "question"+index;
+		return (
+			<>
+			<form onSubmit={this.handleSubmit}>
+			<input id = {inputId} type="text" className = "option" />
+			<input type ="submit" className="btn submit" onClick={submitInput} />
+			</form>
+			</>
+		);
+	}
+
+	const renderOptionInput=(option)=>{
+		return(
+				<div className = "option" onClick={checkCorrectness}>{option}</div>
+			);
+	}
+
+	
+
+	const parseQuestionInput=()=>{
+		console.log(this.props.options);
+		let optionArray = [];
+		if(this.props.options){
+			if(this.props.options =="<input></input>"){
+				optionArray.push(renderTextInput());
+			}
+			else{
+			for(let o in this.props.options){
+				let option = this.props.options[o];
+				if(option.includes("input")){
+					optionArray.push(renderTextInput(o));
+				}
+				else{
+					optionArray.push(renderOptionInput(option));
+				}
+			}
+		}
+	}
+		return optionArray;
+	}
+
 	return(
 		<>
-		<div className = "question-icon" onClick = {openQuestion()}></div>
 		<div className = "question">
 			<div className = "question-text">
+				{this.props.text}
+			</div>
+			<div className = "options">
+					{parseQuestionInput()}
 			</div>
 		</div>
+		</>
 	);
 	}
 }
@@ -31,13 +97,8 @@ class PageQuestion extends React.Component{
 PageQuestion.propTypes = {
   text: PropTypes.string, 
   options: PropTypes.array,
-  answer: PropTypes.string
+  answer: PropTypes.string,
+  activateNext: PropTypes.func
 }
 
-PageQuestion.propTypes  = {
-   text: '', 
-   options: [],
-   answer:''
-}
-
-export default SwiperCard
+export default PageQuestion

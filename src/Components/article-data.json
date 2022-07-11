@@ -73,7 +73,7 @@
 		"content":"<p>As the centuries passed and humans began traveling farther and farther around the globe—to explore, to trade with each other, to fight wars—rats came along for the ride. They hid in the bottoms of ships, helping themselves to the crew’s food and water. When the ships arrived at their destinations, the rats scampered ashore and made themselves at home.</p><p>In this way, rats established themselves in one place after another. And wherever they lived, they followed humans around like furry little shadows. They stole our food, feasted on our garbage, and nested in our homes.</p><p>But rats did more than just get on our nerves. They also brought misery and death.</p>",
 		"question":{
 			"text":"Have you ever seen a rat? How do you feel about it?",
-			"options":"<input></input>",
+			"options":["<input></input>"],
 			"answer":""
 		}
 	},
@@ -83,7 +83,7 @@
 		"content":"<p>In the 1300s, people across Africa, Asia, and Europe began getting sick. They burned with fever as oozing purple sores bubbled up on their skin. Death came within days.</p><p>This horrific disease was called the plague, and it spread with terrifying speed. Within just a few years, as many as 200 million people died.</p><p>At the time, people struggled to determine the cause of the scourge. Were people being poisoned? Was it a punishment from God? What no one suspected was that rats were one of the culprits.</p>",
 		"question":{
 			"text":"However, a new study suggests that rats weren’t the main carriers of fleas and lice that spread the plague—it was humans. Check out this article <i><a href=https://www.history.com/news/rats-didnt-spread-the-black-death-it-was-humans>Rats Didn’t Spread the Black Death—It Was Humans</a><i> if you are interested.",
-			"options":"",
+			"options":[],
 			"answer":""
 		}
 	},

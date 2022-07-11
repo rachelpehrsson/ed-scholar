@@ -5,7 +5,8 @@ import React, {Component, useState, useEffect} from "react"
 import SwiperCard from "./swiper-card"
 import { useSwipeable } from "react-swipeable";
 import {Navigate, useNavigate} from "react-router-dom";
-import swipercards from "../article-data"
+import swipercards from "../article-data";
+
 
 
 const ArticleSwiper =()=>{
@@ -40,38 +41,14 @@ const updateIndex = (newIndex) => {
             state: { text: swipercards[activeIndex].pages }
           }}
         />);
+  }
 
-    // fetch(url)
-    //   .then((response) => {
-    //   	console.log(url);
-    //   	console.log(response.text());
-        // now fetch the text
-        //const reader = response.body.getReader();
-    		// 	return new ReadableStream({
-      // 		start(controller) {
-      //   	return pump();
-      //   	function pump() {
-      //     	return reader.read().then(({ done, value }) => {
-      //       // When no more data needs to be consumed, close the stream
-      //       if (done) {
-      //         controller.close();
-      //         return;
-      //       }
-      //       // Enqueue the next data chunk into our target stream
-      //       controller.enqueue(value);
-      //       return pump();
-      //     });
-      //   }
-      // }
-   			//  });
-      // });
-  //     .then(stream => new Response(stream))
-  // // Create an object URL for the response
-  // .then(response => response.blob())
-  // .then(blob => URL.createObjectURL(blob))
-  // // Update image
-  // .then(url => console.log(url))
-  // .catch(err => console.error(err));
+  const arrowNavigation = (className)=>{
+  	if(className.includes("prev"))
+  		updateIndex(activeIndex - 1);
+  	else{
+  		updateIndex(activeIndex + 1);
+  	}
   }
 
 const renderCard=(i)=> {
@@ -80,7 +57,8 @@ const renderCard=(i)=> {
 			title = {swipercards[i].title}
 			path = {swipercards[i].headerimage}
 			previewtext = {swipercards[i].previewtext}
-			navigateFunc = {componentWillMount}
+			readMoreFunc = {componentWillMount}
+			arrowNavFunc = {arrowNavigation}
 			key = {i}
 		/>
 		);

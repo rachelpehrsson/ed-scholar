@@ -23,7 +23,7 @@ class HighlighterSelect extends React.Component{
 
 	const Color = ({color}) =>{
   		 return (
-    		<div className={"color-option "+color} onClick = {runClick} value={color}>
+    		<div className={"color-option "+color} value={color} onClick={runClick}>
       			<span className = "dot" color={color} ></span>
     		</div>
   			);

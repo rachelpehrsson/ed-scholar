@@ -119,6 +119,11 @@
   background-color: #14142E;
 }
 
+.lower-menu{
+  display: flex;
+  justify-content: space-between;
+}
+
 .page-view{
   display: flex;
 }
@@ -134,8 +139,16 @@
   cursor: pointer;
 }
 
+.page-nav.lock{
+  color: lightgrey;
+}
+
 .page{
   text-align: left;
+}
+
+.page .text-content img{
+  width: 100%;
 }
 
 .hl{
@@ -181,3 +194,6 @@
   display: none;
 }
 
+.question{
+  display: none;
+}

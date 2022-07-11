@@ -2,6 +2,9 @@ import PropTypes from "prop-types"
 //import './fonts.css'
 import React, {Component} from "react"
 //import Image from '../components/image.js';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faCircleChevronLeft} from '@fortawesome/free-solid-svg-icons';
+import {faCircleChevronRight} from '@fortawesome/free-solid-svg-icons';
 
 class SwiperCard extends React.Component{
 	constructor(props){
@@ -11,9 +14,15 @@ class SwiperCard extends React.Component{
 		}
 	} 
 	render(){
-	const runClick=event=>{
-		this.props.navigateFunc();
+	const readClick=event=>{
+		this.props.readMoreFunc();
 	}
+
+	const navClick=event=>{
+		 let className = event.currentTarget.className;
+		 this.props.arrowNavFunc(className);
+	}
+
 	return(
 		<div className = "swiper-card article"/*{'piece ${ this.state.open }'}*/ >
 		<div className = "main-image">
@@ -27,7 +36,11 @@ class SwiperCard extends React.Component{
 		</div>
 		<div className = "stats">
 		</div>
-		<span onClick = {runClick} >Read More</span>
+		<div className = "lower-menu">
+		 <div className="article-nav prev" onClick={navClick}><FontAwesomeIcon icon={faCircleChevronLeft} /></div>
+		<span onClick = {readClick} >Read More</span>
+		<div className="article-nav next" onClick={navClick}><FontAwesomeIcon icon={faCircleChevronRight} /></div>
+		</div>
 		</div>
 	);
 	}
@@ -37,7 +50,8 @@ SwiperCard.propTypes = {
   title: PropTypes.string.isRequired, 
   path: PropTypes.string, 
   previewtext:PropTypes.string, 
-  navigateFunc:PropTypes.func
+  readMoreFunc:PropTypes.func, 
+  arrowNavFunc:PropTypes.func
 }
 
 
