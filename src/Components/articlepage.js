@@ -11,8 +11,8 @@ import {faQuestion} from '@fortawesome/free-solid-svg-icons';
 import HighlighterSelect from "./highlighter-select"
 import PageQuestion from "./page-question"
 
-  
 const ArticlePage = () => {
+
    //console.log(props);
     const location = useLocation();
     console.log(location);
@@ -98,7 +98,7 @@ const parseText =(txt)=>{
 }
 
 const setHighlighterColor=(color)=>{
-    let selector = document.getElementById("selector"); 
+    let selector = document.getElementById("selector");
     currentColor = color;
     selector.style.color = colorMap.get(currentColor);
     document.getElementById("color-menu").style.display = "none";
@@ -163,6 +163,7 @@ const prevPage =()=>{
 
 
   return (
+
     <>
     <div className="page-view">
     <div className={"page-nav prev "+(currentPage==0?"lock":"")}><FontAwesomeIcon icon={faCircleChevronLeft} onClick={prevPage} /></div>
@@ -178,6 +179,7 @@ const prevPage =()=>{
       {(!availableQuestion || questionComplete) && (<FontAwesomeIcon icon={faCircleChevronRight} onClick={nextPage} />)}
     </div>
     </div>
+
     </>
   );
 
@@ -185,6 +187,6 @@ const prevPage =()=>{
 
 };
 
-
   
 export default ArticlePage;
+
