@@ -24,7 +24,8 @@ class PopUp extends React.Component{
 				<div className="header-bar">
 					<span onClick = {off}>X</span>
 				</div>
-				{this.props.innerText}
+				<div className="text" dangerouslySetInnerHTML={{__html:this.props.innerText}}>
+				</div>
 				</div>
 			</div>
 			</>

@@ -22,8 +22,6 @@ const ArticlePage = () => {
     const pages = location.state.text;
     //let currentPage = 0;
 
-let popUpTxt = "As you read the articles, think about what lines you agree with. What sounds new to you? What do you disagree with? You can highlight the point you agree with using green color, highlight things that sound new to you with yellow color, things you disagree with red color. Use the highlight icon at the top of the page to choose the color."
-
 let colorMap = new Map();
 colorMap.set("green", "#7FBA00");
 colorMap.set("red", "#EA4D33");
@@ -179,6 +177,8 @@ const prevPage =()=>{
 const on =()=>{
   document.getElementById("overlay").style.display = "block";
 }
+
+let popUpTxt = "As you read the articles, think about what lines you agree with. What sounds new to you? What do you disagree with? <ul> <li style='color:#7FBA00'>Highlight the point you agree with using green color</li> <li style='color:#F09609'>Highlight things that sound new to you with yellow color </li> <li style='color:#EA4D33'>Highlight things you disagree with red color</li></ul> Use the highlight icon at the top of the page to choose the color."
 
   return (
 
