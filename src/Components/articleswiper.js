@@ -96,16 +96,15 @@ const renderCard=(i)=> {
 		}
 
 	return(
-
-		<>
+		<div style={{maxWidth:"800px", margin:"auto"}}>
 		<div className = "swiper-bar">
 			{renderBars()}
 		</div>
 	 <div className = "swipers" {...handlers}>
 		{swiperElem[activeIndex]}
 		</div>
-		
-		</>
+		</div>
+	
 	);
 
 }

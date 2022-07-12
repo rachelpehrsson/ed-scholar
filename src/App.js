@@ -13,7 +13,7 @@ function App() {
 
     <div className="App">
       <header className="App-header">
-        <Router>
+      <Router>
           <Routes>
           <Route path="/" component={LandingPage}  element={<LandingPage />} />
           <Route path="/swipe" component={Swipe}  element={<Swipe />} />
@@ -22,6 +22,7 @@ function App() {
           <Navbar />
       </Router>
       </header>
+        
     </div>
 
   );

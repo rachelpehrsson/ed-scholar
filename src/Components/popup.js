@@ -19,7 +19,7 @@ class PopUp extends React.Component{
 
 		return(
 			<>
-			<div id="overlay">
+			<div id="overlay" className = {(this.props.initialShow?"initial":"general")}>
 				<div className = "content">
 				<div className="header-bar">
 					<span onClick = {off}>X</span>
@@ -33,7 +33,8 @@ class PopUp extends React.Component{
 }
 
 PopUp.propTypes = {
-  innerText: PropTypes.string
+  innerText: PropTypes.string,
+  initialShow: PropTypes.bool
 }
 
 export default PopUp

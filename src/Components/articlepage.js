@@ -113,9 +113,8 @@ const parseText =(txt)=>{
 }
 
 const setHighlighterColor=(color)=>{
-    let selector = document.getElementById("selector");
     setCurrentColor(color);
-    selector.style.color = colorMap.get(currentColor);
+    document.getElementById("selector").style.color = colorMap.get(color);
     document.getElementById("color-menu").style.display = "none";
 }
 
@@ -177,16 +176,22 @@ const prevPage =()=>{
     setActiveIndex(prev);
 }
 
+const on =()=>{
+  document.getElementById("overlay").style.display = "block";
+}
 
   return (
 
     <>
-    {(currentPage==0)&&(<PopUp innerText = {popUpTxt} />)}
+    <PopUp innerText = {popUpTxt} initialShow = {(currentPage==0)} />
     <div className="page-view">
     <div className={"page-nav prev "+(currentPage==0?"lock":"")}><FontAwesomeIcon icon={faCircleChevronLeft} onClick={prevPage} /></div>
     <div className="page">
       <h1>{pages[currentPage].title}</h1>
+      <div className="action-bar">
       <HighlighterSelect colorClick = {setHighlighterColor}/>
+      <div className="hl-instructions" onClick ={on}>Highlighting Guide</div>
+      </div>
       <div id = "content" className="text-content" onMouseUp={e=>readSelection(e)} dangerouslySetInnerHTML={{__html:parseText(pages[currentPage].content)}}>
       </div>
       {addQuestion()}
@@ -197,7 +202,7 @@ const prevPage =()=>{
     </div> 
     </div>
     <div className="highlight-contents">
-     {(currentPage==(pages.length-1))&&<HighlighterSelections highlightMap={hlMap} />}
+     {(currentPage==(pages.length-1))&&(<HighlighterSelections highlightMap={hlMap} />)}
      </div>
     </>
   );

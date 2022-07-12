@@ -165,6 +165,10 @@
   width: 80%;
 }
 
+.page .action-bar{
+  display: flex;
+}
+
 .hl{
   display: inline;
 }
@@ -273,6 +277,7 @@
 
 #overlay {
   position: fixed; /* Sit on top of the page content */
+  display: none;
   width: 100%; /* Full width (cover the whole page) */
   height: 100%; /* Full height (cover the whole page) */
   top: 0;
@@ -282,6 +287,10 @@
   background-color: rgba(0,0,0,0.5); /* Black background with opacity */
   z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
   cursor: pointer; /* Add a pointer on hover */
+}
+
+#overlay.initial {
+  display: block;
 }
 
 .content{
@@ -303,4 +312,10 @@
 
 .header-bar span{
   font-weight: bold;
+}
+
+.hl-instructions{
+  font-size: 18px;
+  color: navy;
+  margin: 0px 10px;
 }
