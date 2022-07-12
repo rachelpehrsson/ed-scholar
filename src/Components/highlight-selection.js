@@ -28,7 +28,7 @@ class HighlighterSelections extends React.Component{
 	}
 
 	const showHighlights =()=>{
-		document.getElementById("highlights").style.display = "inline-block";	
+		document.getElementById("highlights").style.display = "block";	
 	}
 
 	const buildLists=()=>{

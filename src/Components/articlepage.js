@@ -42,10 +42,10 @@ const readSelection=()=>{
     let selection = getSelectionHtml();
     let selectionStr = window.getSelection().toString();
     let pageContent = document.getElementById("content");
-    let highlighted = "<div class='hl hl-"+currentColor+"'>"+selection+"</div>";
-    let innerHTML = pageContent.innerHTML;
+    let highlighted = "<span class='hl hl-"+currentColor+"'>"+selection+"</span>";
+    let innerHTML = pageContent.innerHTML.slice();
+    let parsedHTML = innerHTML.replace(selection, highlighted);
     pageContent.innerHTML = innerHTML.replace(selection, highlighted);
-    console.log(pageContent.innerHTML);
     highlightedContents = new Map(hlMap);
     highlightedContents.get(currentColor).push(selectionStr);
     setHighlightMap(highlightedContents);

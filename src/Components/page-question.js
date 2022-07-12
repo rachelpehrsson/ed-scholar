@@ -17,14 +17,14 @@ class PageQuestion extends React.Component{
 	const checkCorrectness=(e)=>{
 			if(this.props.answer){
 				if(this.props.answer == e.currentTarget.innerText){
-					e.currentTarget.classList.push("correct");
+					e.currentTarget.classList.add("correct");
 					//call function to show navigation
 				}
 				else
-					e.currentTarget.classList.push("incorrect");
+					e.currentTarget.classList.add("incorrect");
 			}
 			else{
-				e.currentTarget.classList.push("correct");
+				e.currentTarget.classList.add("correct");
 			}
 			submitInput();
 	}
@@ -42,7 +42,7 @@ class PageQuestion extends React.Component{
 		return (
 			<>
 			<form onSubmit={this.handleSubmit}>
-			<input id = {inputId} type="text" className = "option" />
+			<textarea id = {inputId} type="text" rows="4" className = "option-input" />
 			<input type ="submit" className="btn submit" onClick={submitInput} />
 			</form>
 			</>
