@@ -140,6 +140,10 @@
   width: 1em;
 }
 
+.page-nav svg:hover{
+  cursor: pointer;
+}
+
 .page-nav: hover{
   cursor: pointer;
 }
@@ -196,7 +200,7 @@
   margin: 0 5px;
 }
 
-.color-option: hover{
+.color-option:hover{
   cursor: pointer;
 }
 
@@ -214,6 +218,10 @@
 
 .selector{
   display: inline-flex;
+}
+
+.selector:hover{
+  cursor: pointer;
 }
 
 .colors{
@@ -320,3 +328,7 @@
   color: navy;
   margin: 0px 10px;
 }
+
+.hl-instructions:hover{
+  cursor: pointer;
+  }
