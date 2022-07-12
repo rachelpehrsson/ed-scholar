@@ -11,6 +11,7 @@ import {faQuestion} from '@fortawesome/free-solid-svg-icons';
 import HighlighterSelect from "./highlighter-select"
 import PageQuestion from "./page-question"
 import HighlighterSelections from "./highlight-selection";
+import PopUp from "./popup"
 
 const ArticlePage = () => {
 
@@ -21,13 +22,17 @@ const ArticlePage = () => {
     const pages = location.state.text;
     //let currentPage = 0;
 
+let popUpTxt = "As you read the articles, think about what lines you agree with. What sounds new to you? What do you disagree with? You can highlight the point you agree with using green color, highlight things that sound new to you with yellow color, things you disagree with red color. Use the highlight icon at the top of the page to choose the color."
+
 let colorMap = new Map();
 colorMap.set("green", "#7FBA00");
 colorMap.set("red", "#EA4D33");
+colorMap.set("yellow", "#F09609");
 
 let highlightedContents = new Map();
 highlightedContents.set("green", new Array());
 highlightedContents.set("red", new Array());
+highlightedContents.set("yellow", new Array());
 
 const [hlMap, setHighlightMap] = useState(highlightedContents);
 
@@ -176,6 +181,7 @@ const prevPage =()=>{
   return (
 
     <>
+    {(currentPage==0)&&(<PopUp innerText = {popUpTxt} />)}
     <div className="page-view">
     <div className={"page-nav prev "+(currentPage==0?"lock":"")}><FontAwesomeIcon icon={faCircleChevronLeft} onClick={prevPage} /></div>
     <div className="page">

@@ -46,6 +46,7 @@ class HighlighterSelect extends React.Component{
 		<div id="color-menu" className = "colors">
 			<Color color={"green"}/>
 			<Color color={"red"}/>
+			<Color color={"yellow"}/>
 		</div>
 		</>
 	);

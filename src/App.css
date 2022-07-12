@@ -177,6 +177,10 @@
   background-color: #EA4D33;
 }
 
+.hl-yellow{
+  background-color: #F09609;
+}
+
 .dot {
   height: 25px;
   width: 25px;
@@ -198,6 +202,10 @@
 
 .color-option.red .dot{
   background-color: #EA4D33;
+}
+
+.color-option.yellow .dot{
+  background-color: #F09609;
 }
 
 .selector{
@@ -249,4 +257,50 @@
 
 .highlight-contents{
   display: inline-block;
+}
+
+.show-highlights{
+  margin-top:  15px;
+   width: 150px;
+  font-size: 20px;
+  background-color: #7FBA00;
+  border-radius: 10px;
+}
+
+.highlight-entry{
+  margin: 10px 0px;
+}
+
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
+.content{
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  font-size: 20px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+}
+
+.header-bar{
+  display: flex;
+  justify-content: end;
+}
+
+.header-bar span{
+  font-weight: bold;
 }

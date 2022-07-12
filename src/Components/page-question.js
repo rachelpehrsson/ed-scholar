@@ -82,8 +82,7 @@ class PageQuestion extends React.Component{
 	return(
 		<>
 		<div className = "question">
-			<div className = "question-text">
-				{this.props.text}
+			<div className = "question-text" dangerouslySetInnerHTML={{__html:this.props.text}}>
 			</div>
 			<div className = "options">
 					{parseQuestionInput()}
