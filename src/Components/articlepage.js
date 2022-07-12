@@ -10,6 +10,7 @@ import {faCircleChevronRight} from '@fortawesome/free-solid-svg-icons';
 import {faQuestion} from '@fortawesome/free-solid-svg-icons';
 import HighlighterSelect from "./highlighter-select"
 import PageQuestion from "./page-question"
+import HighlighterSelections from "./highlight-selection";
 
 const ArticlePage = () => {
 
@@ -28,17 +29,26 @@ let highlightedContents = new Map();
 highlightedContents.set("green", new Array());
 highlightedContents.set("red", new Array());
 
-let currentColor = "green";
+const [hlMap, setHighlightMap] = useState(highlightedContents);
+
+// const updateHightlightMap=(color, value)=> {
+
+// }
+
+const [currentColor,setCurrentColor] = useState("green"); 
 
 const readSelection=()=>{
   if(window.getSelection()){
     let selection = getSelectionHtml();
-    console.log("selection:"+ selection);
-    console.log(document.selection);
+    let selectionStr = window.getSelection().toString();
     let pageContent = document.getElementById("content");
     let highlighted = "<div class='hl hl-"+currentColor+"'>"+selection+"</div>";
-    pageContent.innerHTML = pageContent.innerHTML.replace(selection, highlighted);
-    highlightedContents.get(currentColor).push(window.getSelection());
+    let innerHTML = pageContent.innerHTML;
+    pageContent.innerHTML = innerHTML.replace(selection, highlighted);
+    console.log(pageContent.innerHTML);
+    highlightedContents = new Map(hlMap);
+    highlightedContents.get(currentColor).push(selectionStr);
+    setHighlightMap(highlightedContents);
     //page
   }
 }
@@ -99,7 +109,7 @@ const parseText =(txt)=>{
 
 const setHighlighterColor=(color)=>{
     let selector = document.getElementById("selector");
-    currentColor = color;
+    setCurrentColor(color);
     selector.style.color = colorMap.get(currentColor);
     document.getElementById("color-menu").style.display = "none";
 }
@@ -147,7 +157,8 @@ const nextPage =()=>{
     if(questionComplete)
       setQuestionState(false);
     setActiveIndex(next);
-    hideQuestion();
+    if(next!=(pages.length-1))
+      hideQuestion();
   }
 }
 
@@ -177,9 +188,11 @@ const prevPage =()=>{
     <div className={"page-nav next "+(currentPage==(pages.length-1)?"lock":"")} id="next" >
       {availableQuestion && !questionComplete && (<FontAwesomeIcon className = 'question-icon' icon={faQuestion} onClick = {showQuestion} />)}
       {(!availableQuestion || questionComplete) && (<FontAwesomeIcon icon={faCircleChevronRight} onClick={nextPage} />)}
+    </div> 
     </div>
-    </div>
-
+    <div className="highlight-contents">
+     {(currentPage==(pages.length-1))&&<HighlighterSelections highlightMap={hlMap} />}
+     </div>
     </>
   );
 

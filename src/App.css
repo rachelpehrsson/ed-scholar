@@ -197,3 +197,11 @@
 .question{
   display: none;
 }
+
+.highlights{
+  display: none;
+}
+
+.highlight-contents{
+  display: inline-block;
+}
