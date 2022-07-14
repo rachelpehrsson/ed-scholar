@@ -12,6 +12,7 @@ import HighlighterSelect from "./highlighter-select"
 import PageQuestion from "./page-question"
 import HighlighterSelections from "./highlight-selection";
 import PopUp from "./popup"
+import { renderToString } from 'react-dom/server'
 
 const ArticlePage = () => {
 
@@ -40,12 +41,30 @@ const [hlMap, setHighlightMap] = useState(highlightedContents);
 
 const [currentColor,setCurrentColor] = useState("green"); 
 
+const showNewColorSet=()=>{
+
+}
+
+// const createToolTip = () = {
+//   return(
+//       <span
+//     );
+// }
+
+const createHighlight=(selection)=>{
+  return(
+      <span className = {"hl hl-"+currentColor} dangerouslySetInnerHTML={{__html:selection}}>
+      </span>
+    );
+}
+
 const readSelection=()=>{
-  if(window.getSelection()){
+  if(window.getSelection() && window.getSelection().toString()!=""){
     let selection = getSelectionHtml();
     let selectionStr = window.getSelection().toString();
     let pageContent = document.getElementById("content");
-    let highlighted = "<span class='hl hl-"+currentColor+"'>"+selection+"</span>";
+    //let highlighted = "<span class='hl hl-"+currentColor+"'><span class='tooltip'>"+selection+"</span>";
+    let highlighted = renderToString(createHighlight(selection));
     let innerHTML = pageContent.innerHTML.slice();
     let parsedHTML = innerHTML.replace(selection, highlighted);
     pageContent.innerHTML = innerHTML.replace(selection, highlighted);
