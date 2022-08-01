@@ -175,6 +175,7 @@
 
 .hl{
   display: inline;
+  position: relative;
 }
 
 .hl-green{
@@ -187,6 +188,16 @@
 
 .hl-yellow{
   background-color: #F09609;
+}
+
+.hl .tooltip{
+  /*visibility: hidden;*/
+  background-color: white;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
 }
 
 .dot {
@@ -306,12 +317,25 @@
   top: 40%;
   left: 50%;
   font-size: 20px;
-  width: 30%;
+  width: 40%;
   background-color: white;
   border-radius: 10px;
   padding: 10px;
   transform: translate(-50%,-50%);
   -ms-transform: translate(-50%,-50%);
+}
+
+@media only screen and (max-width: 325px) {
+  .content {
+    width: 90%;
+  }
+}
+
+@media (min-width: 326px) and (max-width: 650px) {
+  .content {
+    top: 40%;
+    width: 60%;
+  }
 }
 
 .header-bar{

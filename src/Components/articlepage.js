@@ -8,7 +8,7 @@ import { faHighlighter } from '@fortawesome/free-solid-svg-icons';
 import {faCircleChevronLeft} from '@fortawesome/free-solid-svg-icons';
 import {faCircleChevronRight} from '@fortawesome/free-solid-svg-icons';
 import {faQuestion} from '@fortawesome/free-solid-svg-icons';
-import HighlighterSelect from "./highlighter-select"
+import {HighlighterSelect, Color} from "./highlighter-select"
 import PageQuestion from "./page-question"
 import HighlighterSelections from "./highlight-selection";
 import PopUp from "./popup"
@@ -40,21 +40,22 @@ const [hlMap, setHighlightMap] = useState(highlightedContents);
 // }
 
 const [currentColor,setCurrentColor] = useState("green"); 
+//dangerouslySetInnerHTML={{__html:selection}}
 
-const showNewColorSet=()=>{
-
-}
-
-// const createToolTip = () = {
-//   return(
-//       <span
-//     );
-// }
+/*  <span className="tooltip">
+        <span id="color-menu" className = "colors">
+          <Color color={"green"}/>
+          <Color color={"red"}/>
+          <Color color={"yellow"}/>
+        </span>
+       </span>*/
 
 const createHighlight=(selection)=>{
   return(
-      <span className = {"hl hl-"+currentColor} dangerouslySetInnerHTML={{__html:selection}}>
-      </span>
+    <span className={'hl hl-'+currentColor}>
+        <span className="hl-content" dangerouslySetInnerHTML={{__html:selection}}>
+        </span>
+    </span>
     );
 }
 
@@ -67,7 +68,7 @@ const readSelection=()=>{
     let highlighted = renderToString(createHighlight(selection));
     let innerHTML = pageContent.innerHTML.slice();
     let parsedHTML = innerHTML.replace(selection, highlighted);
-    pageContent.innerHTML = innerHTML.replace(selection, highlighted);
+    pageContent.innerHTML = parsedHTML;
     highlightedContents = new Map(hlMap);
     highlightedContents.get(currentColor).push(selectionStr);
     setHighlightMap(highlightedContents);

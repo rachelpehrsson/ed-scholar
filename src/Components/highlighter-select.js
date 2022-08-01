@@ -5,6 +5,9 @@ import {useLocation} from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHighlighter } from '@fortawesome/free-solid-svg-icons';
 
+
+let colorClick;
+
 class HighlighterSelect extends React.Component{
 	constructor(props){
 		super(props);
@@ -16,18 +19,8 @@ class HighlighterSelect extends React.Component{
 
 	render(){
 
-	const runClick=event=>{
-		const color = event.currentTarget.classList[1];
-		this.props.colorClick(color);
-	}
+	colorClick = this.props.colorClick;
 
-	const Color = ({color}) =>{
-  		 return (
-    		<div className={"color-option "+color} value={color} onClick={runClick}>
-      			<span className = "dot" color={color} ></span>
-    		</div>
-  			);
-	};
 	const openHighlighterMenu=()=>{
 		if(!this.state.active){
     		document.getElementById("color-menu").style.display = "inline-flex";
@@ -53,10 +46,25 @@ class HighlighterSelect extends React.Component{
 	}
 }
 
+
+	const runClick=event=>{
+		const color = event.currentTarget.classList[1];
+		colorClick(color);
+	}
+
+
+const Color = ({color}) =>{
+  		 return (
+    		<div className={"color-option "+color} value={color} onClick={runClick}>
+      			<span className = "dot" color={color} ></span>
+    		</div>
+  			);
+	};
+
 HighlighterSelect.propTypes = {
   colors: PropTypes.node,
   active: PropTypes.bool, 
   colorClick: PropTypes.func
 }
 
-export default HighlighterSelect
+export {HighlighterSelect, Color}
