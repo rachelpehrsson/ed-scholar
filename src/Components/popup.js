@@ -19,7 +19,7 @@ class PopUp extends React.Component{
 
 		return(
 			<>
-			<div id="overlay" className = {(this.props.initialShow?"initial":"general")}>
+			<div id="overlay" className = {(this.props.initialShow?"initial":"general")} onClick ={off}>
 				<div className = "content">
 				<div className="header-bar">
 					<span onClick = {off}>X</span>
