@@ -239,6 +239,25 @@
   display: none;
 }
 
+.tooltip .colors{
+    
+    top: -39px;
+    position: absolute;
+    background-color: white;
+    padding: 5px;
+    box-shadow: 2px 3px 5px rgb(0 0 0 / 20%);
+}
+
+.tooltip .colors.active{
+  display: inline-flex;
+}
+
+.colors .delete, .colors .close{
+  padding: 2px 5px;
+}
+
+
+
 .question{
   display: none;
   box-shadow: 2px 3px 5px rgba(0, 0, 0, 0.2);

@@ -37,9 +37,9 @@ class HighlighterSelect extends React.Component{
 			<FontAwesomeIcon icon={faHighlighter} />
 		</div>
 		<div id="color-menu" className = "colors">
-			<Color color={"green"}/>
-			<Color color={"red"}/>
-			<Color color={"yellow"}/>
+			<Color color={"green"} runClick={runClick}/>
+			<Color color={"red"} runClick={runClick}/>
+			<Color color={"yellow"} runClick={runClick}/>
 		</div>
 		</>
 	);
@@ -48,16 +48,17 @@ class HighlighterSelect extends React.Component{
 
 
 	const runClick=event=>{
+		console.log("color call");
 		const color = event.currentTarget.classList[1];
 		colorClick(color);
 	}
 
 
-const Color = ({color}) =>{
+const Color = ({color, runClick}) =>{
   		 return (
-    		<div className={"color-option "+color} value={color} onClick={runClick}>
+    		<span className={"color-option "+color} value={color} onClick={runClick}>
       			<span className = "dot" color={color} ></span>
-    		</div>
+    		</span>
   			);
 	};
 

@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHighlighter } from '@fortawesome/free-solid-svg-icons';
 import {faCircleChevronLeft} from '@fortawesome/free-solid-svg-icons';
 import {faCircleChevronRight} from '@fortawesome/free-solid-svg-icons';
-import {faQuestion} from '@fortawesome/free-solid-svg-icons';
+import {faQuestion, faTrashCan} from '@fortawesome/free-solid-svg-icons';
 import {HighlighterSelect, Color} from "./highlighter-select"
 import PageQuestion from "./page-question"
 import HighlighterSelections from "./highlight-selection";
@@ -42,17 +42,51 @@ const [hlMap, setHighlightMap] = useState(highlightedContents);
 const [currentColor,setCurrentColor] = useState("green"); 
 //dangerouslySetInnerHTML={{__html:selection}}
 
-/*  <span className="tooltip">
+function toggleTooltip(e){
+ let tooltip = e.currentTarget.querySelector(".colors");
+ tooltip.classList.toggle("active");
+}
+
+let changeColor = function(e){
+  let color = e.currentTarget.classList[1];
+  let hl = e.currentTarget.parentElement.parentElement.parentElement;
+  let prevColor = hl.classList[1].replace("hl-", "");
+  hl.className = "hl hl-"+color;
+  let text = hl.querySelector(".hl-content").innerText.replace("<(.*?)\>", '');
+
+  highlightedContents = new Map(hlMap);
+  highlightedContents.get(prevColor).splice(highlightedContents.get(prevColor).indexOf(text),1);
+  highlightedContents.get(color).push(text);
+  setHighlightMap(highlightedContents);  
+}
+
+let deleteHighlight = function(e){
+  let hl = e.currentTarget.parentElement.parentElement.parentElement;
+  let prevColor = hl.classList[1].replace("hl-", "");
+  let text = hl.querySelector(".hl-content").textContent;
+  let pageContent = document.getElementById("content");
+  let innerHTML = pageContent.innerHTML.slice();
+  let parsedHTML = innerHTML.replace(hl.outerHTML, text);
+  pageContent.innerHTML = parsedHTML;
+
+  highlightedContents = new Map(hlMap);
+  highlightedContents.get(prevColor).splice(highlightedContents.get(prevColor).indexOf(text),1);
+  setHighlightMap(highlightedContents);  
+}
+
+const createHighlight=(selection)=>{
+  return(
+    <span className={'hl hl-'+currentColor} onClick={toggleTooltip} >
+        <span className="tooltip">
         <span id="color-menu" className = "colors">
           <Color color={"green"}/>
           <Color color={"red"}/>
           <Color color={"yellow"}/>
+          <span className="delete">
+          <FontAwesomeIcon icon={faTrashCan}/></span>
+          <span className="close">x</span>
         </span>
-       </span>*/
-
-const createHighlight=(selection)=>{
-  return(
-    <span className={'hl hl-'+currentColor}>
+       </span>
         <span className="hl-content" dangerouslySetInnerHTML={{__html:selection}}>
         </span>
     </span>
@@ -72,6 +106,26 @@ const readSelection=()=>{
     highlightedContents = new Map(hlMap);
     highlightedContents.get(currentColor).push(selectionStr);
     setHighlightMap(highlightedContents);
+
+    //Set event listeners needed for interaction
+    let highlights = document.getElementsByClassName("hl");
+    for(let highlight of highlights){
+      if(!highlight.onclick) {
+        highlight.addEventListener("click", function(e){
+          let tooltip = e.currentTarget.querySelector(".colors");
+          tooltip.classList.toggle("active");
+        });
+      }
+
+      let colorDots = highlight.querySelectorAll(".color-option");
+      for(let dot of colorDots){
+        dot.addEventListener("click",changeColor);
+      }
+      let deleteButt = highlight.querySelector(".delete");
+      deleteButt.addEventListener("click", deleteHighlight);
+
+    }
+
     //page
   }
 }
@@ -212,7 +266,7 @@ let popUpTxt = "As you read the articles, think about what lines you agree with.
       <HighlighterSelect colorClick = {setHighlighterColor}/>
       <div className="hl-instructions" onClick ={on}>Highlighting Guide</div>
       </div>
-      <div id = "content" className="text-content" onMouseUp={e=>readSelection(e)} dangerouslySetInnerHTML={{__html:parseText(pages[currentPage].content)}}>
+      <div id = "content" className="text-content" onMouseUp={e=>readSelection(e)} onTouchEnd={e=>readSelection(e)} dangerouslySetInnerHTML={{__html:parseText(pages[currentPage].content)}}>
       </div>
       {addQuestion()}
     </div>
